@@ -8,7 +8,12 @@ export function addUserAction(user) {
       body: JSON.stringify(user)
     }
     const response = await fetch("https://jsonplaceholder.typicode.com", options)
+  }
+}
 
-
+export const addUserType = (user) => {
+  return {
+    type: 'ADD_USER',
+    payload: user
   }
 }

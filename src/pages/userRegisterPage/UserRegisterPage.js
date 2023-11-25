@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Row, Col, Form, Button, Container, Spinner } from "react-bootstrap"
 import { useDispatch } from "react-redux";
-import { addUserAction } from "../../redux/actions";
+import { addUserAction, addUserType } from "../../redux/actions";
 
 
 function UserRegisterPage() {
@@ -23,7 +23,9 @@ function UserRegisterPage() {
   const addUser = (event) => {
     event.preventDefault()
     dispatch(addUserAction(user))
+    dispatch(addUserType(user))
   }
+
   return (
     <Container>
       <Form onSubmit={addUser}>
